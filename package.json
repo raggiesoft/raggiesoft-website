@@ -1,0 +1,32 @@
+{
+  "name": "raggiesoft-monorepo",
+  "version": "1.0.0",
+  "description": "My website source code",
+  "main": "index.js",
+  "scripts": {
+    "//--- 1. SCSS ASSET COMPILERS ---": "",
+    "compile:scss-common": "sass assets-src/common/scss:../raggiesoft-dist/digital-ocean/common/css --style=compressed",
+    "compile:scss-knox": "sass assets-src/knox/scss:../raggiesoft-dist/digital-ocean/knox/css --style=compressed",
+
+    "//--- 2. PHP/HTML SITE COPIERS ---": "",
+    "copy:php-knox": "cpy sites-php/raggiesoftknox.com/** ../raggiesoft-dist/glowing-galaxy/raggiesoftknox.com",
+    
+    "//--- 3. MASTER BUILD COMMANDS ---": "",
+    "build:scss": "npm-run-all --parallel compile:scss-*",
+    "build:php": "npm-run-all --parallel copy:php-*",
+    "build": "npm-run-all --parallel build:*",
+
+    "//--- 4. WATCH COMMANDS FOR DEV ---": "",
+    "watch:scss": "npm-run-all --parallel \"compile:scss-* -- --watch\"",
+    "watch:php": "npm-run-all --parallel \"copy:php-* -- --watch\"",
+    "watch": "npm-run-all --parallel watch:*"
+  },
+  "keywords": [],
+  "author": "Michael Ragsdale",
+  "license": "ISC",
+  "devDependencies": {
+    "cpy-cli": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.77.8"
+  }
+}
