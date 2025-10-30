@@ -9,7 +9,7 @@
     "compile:scss-knox": "sass assets-src/knox/scss:../raggiesoft-dist/digital-ocean/knox/css --style=compressed",
 
     "//--- 2. PHP/HTML SITE COPIERS ---": "",
-    "copy:php-knox": "cpy sites-php/raggiesoftknox.com/** ../raggiesoft-dist/glowing-galaxy/raggiesoftknox.com",
+    "copy:php-knox": "cpy sites-php/** ../raggiesoft-dist/glowing-galaxy/",
     
     "//--- 3. MASTER BUILD COMMANDS ---": "",
     "build:scss": "npm-run-all --parallel compile:scss-*",
